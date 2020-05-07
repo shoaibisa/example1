@@ -1,36 +1,4 @@
 
- <?php
-
-         if(isset($_POST['submit']))
-         {
-            date_default_timezone_set('Asia/Calcutta');
-            $odate=date("F d, Y ");
-            $otime=date("h:i:s a");
-            $scname=$_POST['scname'];
-            $oclass=$_POST['oclass'];
-            $ob=$_POST['obooks'];
-            $obooks=implode(',',$ob);
-            $oname=$_POST['oname'];
-            $omobile=$_POST['omobile'];
-            $oadrs=$_POST['oadrs'];
-
-
-            $con=mysqli_connect('localhost','root','','qamar','3308');
-            $qry="INSERT INTO corder(scname,oclass,obooks,oname,omobile,oadrs,otime,odate) VALUES ('$scname','$oclass','$obooks','$oname','$omobile','$oadrs','$otime','$odate')";
-            $res=mysqli_query($con,$qry);
-            if($res)
-            {
-              header("location:order.php");
-            }
-            else {
-              die("failed");
-            }
-
-         }
-
-
-
-  ?>
 
 
     <!DOCTYPE html>
